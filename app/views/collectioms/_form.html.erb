@@ -1,0 +1,22 @@
+<%= form_with(model: collectiom) do |form| %>
+  <% if collectiom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(collectiom.errors.count, "error") %> prohibited this collectiom from being saved:</h2>
+
+      <ul>
+        <% collectiom.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
